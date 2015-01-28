@@ -46,7 +46,7 @@ var user = {
     } else {
       delete user[key];
     }
-  }
+  };
 
 //Once you get your truthy object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
@@ -66,16 +66,21 @@ var user = {
 
 //create an empty object called methodCollection. 
 
-  //Your code here
+  var methodCollection ={};
 
 //Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
 
-  //Your code here
+  methodCollection.alertHello = function(){
+    alert ('hello');
+  }
 
+  methodCollection.logHello = function(){
+    console.log('hello');
+  }
 //Now call your alertHello and logHello methods. 
 
-  //Your code here
-
+  methodCollection.alertHello();
+  methodCollection.logHello();
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -85,5 +90,20 @@ var user = {
 //write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
+var voweler = function(string){
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var lookUp = {};
+  string = string.toLowerCase();
+  for(var i = 0; i < string.length; i++) {
+    if(vowels.indexOf(string[i]) !== -1) {
+      if(!lookUp[string[i]]) {
+        lookUp[string[i]] = 0
+      }
+      lookUp[string[i]]++;
+    }
+  }
+  return lookUp;
+};
 
+voweler("We are testing the voweler function thingy");
 

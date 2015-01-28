@@ -63,9 +63,11 @@ var randomArray = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Then, add 6 and 7 to the end of second. When you run this, first should be just [1,2,3,4,5] 
 //and second will be [1,2,3,4,5,6,7] if you created your copy correctly.
 var first = [1,2,3,4,5];
-var second = [1,2,3,4,5];
-
-  second.push(6,7);
+var second = [];
+for(var i = 0; i < first.length; i++){
+  second.push(first[i]);
+};
+second.push(6,7);
 
 alert(first) //[1,2,3,4,5];
 alert(second) //[1,2,3,4,5,6,7];
@@ -82,9 +84,15 @@ var sentence = "Dev Mountain is the best"
 
   var longest = function(string){
   	var split = sentence.split(" ");
-  	return split[1];
+  	var longestWord = split[0];
+    for(var i = 0; i < split.length; i++) {
+      if(longestWord.length < split[i].length) {
+        longestWord = split[i];
+      }
+    }
+    return longestWord;
   };
-  longest();
+  longest(sentence);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -98,9 +106,9 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
   var capitalize = function(poem){
   	var myPoemArray = poem.split(" ");
   	for (var i = 0; i < myPoemArray.length; i++){
-  		var firstLetter = myPoemArray[i].split("");
-  		firstLetter[0] = firstLetter[0].toUpperCase();
-  		myPoemArray[i] = firstLetter.join("");
+  		var splitLetter = myPoemArray[i].split("");
+  		splitLetter[0] = splitLetter[0].toUpperCase();
+  		myPoemArray[i] = splitLetter.join("");
   	}
   	console.log(myPoemArray.join(" "));
   };
@@ -115,15 +123,20 @@ var myPoem = 'What is a jQuery but a misunderstood object?'
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
 
-var vowels = [a, e, i, o, u]
+var vowels = ['a', 'e', 'i', 'o', 'u']
 
 var vowelCounter = function(sentence) {
-	var sentenceArray = sentence.split("");
-	for(var i = 0; i < sentenceArray.length; i++){
-
+	//var sentenceArray = sentence.split("");
+  var count = 0;
+	for(var i = 0; i < sentence.length; i++){
+    if(vowels.indexOf(sentence[i]) !== -1) {
+      count ++;
+    }
 	}
-
+  return count; 
 };
+
+vowelCounter(theOdyssey);
 
 
 
