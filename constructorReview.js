@@ -1,31 +1,49 @@
 //Create a Animal Constructor that has the following parameters. species, name, legs, color, food (which is an array of foods they can eat).
 
-  //code here
+  Var Animal = function(species, name, legs, color, food) {
+    this.species = species;
+    this.name = name;
+    this.legs = legs;
+    this.color = color;
+  }
 
 
 //Now create a person function that creates an object and returns it (not in constructor form) that has the following parameters. name, age, height, gender
 
-  //code here
+  Var Person = function(name, age, height, gender){
+    var newPerson = {};
+    newPerson.name = name;
+    newPerson.age = age;
+    newPerson = height;
+    newPerson = gender;
 
+    return newPerson;
+  };
+  Person();
 
 //Create a animal array and a person array.
 
-  //code here
+  var animal = [];
+  var person = [];
 
 
 //Create two instances of Animal and push those into your animal array
 
-  //code here
+  animal.push(new Animal('Horse', 'Bob', 4, 'Brown', ['hay', 'carrots', 'grass']));
+  animal.push(new Animal('Monkey', 'Bill', 4, 'Black', ['Bananas', 'Apples', 'Peaches']));
 
 
 //Create two instances of person and push those into your person array.
 
-  //code here
+  person.push(new Person('Rocky', '27', "5' 10", 'Male'));
+  person.push(new Person('Bre', '26', "5' 2", 'female'));
 
 
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
-  //code here
+  Animal.prototype.eat = function(){
+    
+  }
 
 
 //At this point, if we wanted to add something to every istance of person could we? 
