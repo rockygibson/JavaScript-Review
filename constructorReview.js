@@ -1,10 +1,11 @@
 //Create a Animal Constructor that has the following parameters. species, name, legs, color, food (which is an array of foods they can eat).
 
-  Var Animal = function(species, name, legs, color, food) {
+  var Animal = function(species, name, legs, color, food) {
     this.species = species;
     this.name = name;
     this.legs = legs;
     this.color = color;
+    this.food = food;
   }
 
 
@@ -42,8 +43,9 @@
 //Now we want every instance of Animal to have a eat method. This method will choose a random item in that instances food array, then alert "(name) ' ate ' (whichever food was chosen)".
 
   Animal.prototype.eat = function(){
-    
-  }
+    var randomIndex = Math.floor(Math.random() * this.food.length)
+    alert(this.food[randomIndex])
+  };
 
 
 //At this point, if we wanted to add something to every istance of person could we? 
